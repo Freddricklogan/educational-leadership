@@ -1,0 +1,59 @@
+{
+  "title": "Educational Leadership & School Improvement",
+  "subtitle": "a graduate-level guide to leading K-12 improvement, with a four-frame explorer, a PDSA stepper and an equity audit",
+  "problem": "New principals and aspiring district leaders arrive with a leadership theory, a data dashboard and a strategic plan, and are surprised by the same things every year: a change that met resistance the org chart did not predict, a spike in absenteeism nobody tested a fix for, an achievement gap that looked fine in the average. The frameworks are known; the habit of reframing, testing small and disaggregating is not built.",
+  "solution": "A twelve-section resource that moves from Leithwood's core practices through Bolman and Deal's four frames, six leadership models, improvement science and professional learning communities, data-informed decision making, the politics and law of K-12 education, systemic inequity and the learning organization — with a frame explorer that shows each lens's assumptions and moves, a PDSA stepper that walks one change idea through a ninth-grade absenteeism problem, and an equity audit after Skrla, McKenzie and Scheurich that scores a school's actual practices.",
+  "pedagogy": "practice before theory: the frame tabs, PDSA stepper and equity audit each make the reader act on a concrete school problem before the page names the framework; the law section is an orientation with cases, not advice; a glossary of foundational works closes the loop.",
+  "section_titles": [
+    "leadership as improvement",
+    "four organizational frames",
+    "six leadership models",
+    "improvement science",
+    "PDSA cycle",
+    "data-informed decisions",
+    "politics of education",
+    "education law",
+    "systemic inequity",
+    "equity audit",
+    "learning organization",
+    "glossary"
+  ],
+  "widgets": [
+    {
+      "name": "Four-frame explorer",
+      "what": "Tabs for the structural, human-resource, political and symbolic frames, each with its assumptions, roots and the leader's move"
+    },
+    {
+      "name": "PDSA stepper",
+      "what": "Walks a change idea for ninth-grade chronic absenteeism through Plan, Do, Study and Act with a hint at each phase, beside a driver diagram"
+    },
+    {
+      "name": "Equity audit",
+      "what": "Weighted checklist of equity practices — disaggregation, discipline monitoring, advanced-course access, teacher-quality distribution — with a bar and an Emerging / Developing / Strong verdict"
+    }
+  ],
+  "quiz_topics": [
+    "reframing and the structural frame",
+    "why PDSA tests are small and fast",
+    "Bernhardt's four data types",
+    "Tinker and the limits on student speech",
+    "how inequity is structured"
+  ],
+  "tour": [
+    "the first section opens and the count rises.",
+    "reframing, PDSA, data types, student speech and structural inequity"
+  ],
+  "repo": "educational-leadership",
+  "tests": 7,
+  "cov_all": 79.84,
+  "cov_kit": 78.75,
+  "vars": 26,
+  "inline_styles": 75,
+  "style_classes": 21,
+  "buttons": 6,
+  "tables": 4,
+  "main_note": "wrapped the content in a `<main>` landmark",
+  "sections": 12,
+  "reading_min": 16,
+  "words": 3634
+}
