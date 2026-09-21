@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <title>Educational Leadership &amp; School Improvement — A Complete Resource</title>
 <meta name="description" content="A rigorous, interactive graduate-level guide to educational leadership and K-12 school improvement: organizational theory, leadership models, improvement science, data-informed decisions, the politics and law of education, and systemic equity. Authored by Freddrick Logan.">
 <meta name="author" content="Freddrick Logan">
@@ -12,210 +13,18 @@
 <meta property="og:description" content="Leading learning organizations and improving schools with evidence, equity, and people at the center — an interactive graduate-level resource.">
 <meta property="og:url" content="https://freddricklogan.github.io/educational-leadership/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23ffffff'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%2394773d' stroke-width='2.2'/%3E%3Cpolygon points='16,7 19,16 16,25 13,16' fill='%2314213d'/%3E%3Ccircle cx='16' cy='16' r='2' fill='%23ffffff' stroke='%2394773d' stroke-width='1.4'/%3E%3C/svg%3E">
-<style>
-  /* ==== EXECUTIVE DESIGN SYSTEM — light, editorial, WCAG-aware ==== */
-  :root{
-    --paper:#ffffff;--paper2:#f5f7f9;--paper3:#eef1f5;
-    --navy:#14213d;--navy2:#1c2f4f;
-    --panel:#ffffff;--panel2:#ffffff;--panel3:#f5f7f9;
-    --line:#e3e7ec;--line2:#d1d8e2;
-    --accent:#1e3a5f;--accent2:#2a5486;--accent3:#243f6a;
-    --ink:#14213d;--body:#33404f;--muted:#4c596b;--dim:#5f6c7e;
-    --gold:#94773d;--gold-soft:#f3eddf;
-    --good:#15803d;--warn:#b45309;--bad:#b3261e;
-    --serif:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif;
-    --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Inter,system-ui,sans-serif;
-    --r:12px;--maxw:1060px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:var(--sans);color:var(--body);line-height:1.7;background:var(--paper);
-    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-  a{color:var(--accent);text-decoration:none}
-  a:hover{color:var(--accent2);text-decoration:underline}
-  a:focus-visible,button:focus-visible,.tab:focus-visible,.opt:focus-visible,.ck:focus-visible,input:focus-visible{
-    outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
-  h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);font-weight:700;letter-spacing:-.01em}
-  h2{font-size:1.75rem;line-height:1.2;margin-bottom:8px}
-  h3{font-size:1.18rem;color:var(--navy);margin-bottom:8px}
-  p{color:var(--body)}
-  .lead{color:var(--muted)}
-  em{color:inherit}
-  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--gold)}
 
-  /* NAV */
-  nav.top{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);
-    background:rgba(255,255,255,.92);border-bottom:1px solid var(--line)}
-  nav.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:14px}
-  .logo{display:flex;align-items:center;gap:11px;font-family:var(--serif);font-weight:700;font-size:1.05rem;color:var(--ink);white-space:nowrap}
-  .logo svg{width:30px;height:30px}
-  .navlinks{display:flex;gap:22px;font-size:.85rem;overflow-x:auto}
-  .navlinks a{color:var(--muted);font-weight:600;white-space:nowrap}
-  .navlinks a:hover{color:var(--accent);text-decoration:none}
-  @media(max-width:860px){.navlinks{display:none}}
-
-  /* HERO */
-  header.hero{padding:80px 0 56px;position:relative}
-  .hero .eyebrow{margin-bottom:18px}
-  .hero h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,3.3rem);line-height:1.1;letter-spacing:-.02em;
-    font-weight:700;color:var(--ink);margin-bottom:22px}
-  .hero p{font-size:1.14rem;color:var(--muted);max-width:660px}
-  .hero .cta{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
-  .btn{padding:12px 22px;border-radius:8px;font-weight:600;font-size:.92rem;cursor:pointer;
-    border:1px solid var(--line2);background:#fff;color:var(--ink);transition:.15s;font-family:var(--sans)}
-  .btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
-  .btn.primary:hover{background:var(--navy2)}
-  .btn:hover{border-color:var(--accent);color:var(--accent)}
-  .btn.primary:hover{color:#fff}
-  .statrow{display:flex;gap:40px;margin-top:48px;flex-wrap:wrap}
-  .statrow .s .n{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--navy)}
-  .statrow .s .l{font-size:.78rem;color:var(--dim);text-transform:uppercase;letter-spacing:.09em;margin-top:2px}
-
-  /* EXECUTIVE SUMMARY / TL;DR */
-  .exec-summary{background:var(--paper2);border:1px solid var(--line2);border-left:4px solid var(--navy);
-    border-radius:12px;padding:26px 28px;margin:6px 0 0}
-  .exec-summary .tldr{font-family:var(--sans);text-transform:uppercase;letter-spacing:.14em;font-size:.68rem;
-    font-weight:700;color:var(--gold);margin-bottom:8px}
-  .exec-summary h2{font-size:1.2rem;margin-bottom:12px}
-  .exec-summary ul{list-style:none;padding:0;margin:0;display:grid;gap:9px}
-  .exec-summary li{padding-left:22px;position:relative;color:var(--muted);font-size:.96rem}
-  .exec-summary li::before{content:'';position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:50%;
-    background:var(--gold)}
-  .exec-summary li b{color:var(--ink);font-weight:700}
-
-  section{padding:60px 0;border-top:1px solid var(--line)}
-  .sec-head{margin-bottom:34px;max-width:720px}
-  .sec-head .eyebrow{display:block;margin-bottom:12px}
-
-  .grid{display:grid;gap:20px}
-  .g2{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-  @media(max-width:860px){.g2,.g3,.g4{grid-template-columns:1fr}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:24px;
-    box-shadow:0 1px 2px rgba(20,33,61,.04)}
-  .card.hoverable{transition:.18s}.card.hoverable:hover{border-color:var(--line2);transform:translateY(-2px);
-    box-shadow:0 14px 34px -20px rgba(20,33,61,.35)}
-  .card .tag{display:inline-block;font-family:var(--sans);font-size:.68rem;font-weight:700;text-transform:uppercase;
-    letter-spacing:.09em;color:var(--gold);background:var(--gold-soft);padding:3px 10px;border-radius:4px;margin-bottom:12px}
-  .card ul{margin:10px 0 0 0;padding-left:18px;color:var(--muted);font-size:.92rem}
-  .card ul li{margin-bottom:6px}
-  .kv{font-size:.92rem;color:var(--muted);margin-top:4px}.kv b{color:var(--ink);font-weight:700}
-
-  /* TABS */
-  .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
-  .tab{padding:10px 16px;border-radius:8px;border:1px solid var(--line2);background:#fff;color:var(--muted);
-    font-weight:600;font-size:.88rem;cursor:pointer;transition:.15s;font-family:var(--sans)}
-  .tab:hover{color:var(--accent);border-color:var(--accent)}
-  .tab.active{background:var(--navy);border-color:var(--navy);color:#fff}
-  .panel{display:none;animation:fade .3s ease}
-  .panel.active{display:block}
-  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
-  .panel-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px}
-  @media(max-width:860px){.panel-grid{grid-template-columns:1fr}}
-  .facts{list-style:none;padding:0}
-  .facts li{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
-  .facts li span:first-child{color:var(--dim);min-width:130px;font-weight:600}
-  .facts li span:last-child{color:var(--ink)}
-
-  /* SELECTOR widget */
-  .selector{background:var(--paper2);border:1px solid var(--line2);border-radius:14px;padding:28px}
-  .q{margin-bottom:20px}
-  .q p{font-weight:600;color:var(--ink);margin-bottom:10px}
-  .opts{display:flex;gap:8px;flex-wrap:wrap}
-  .opt{padding:9px 14px;border-radius:8px;border:1px solid var(--line2);background:#fff;
-    color:var(--muted);cursor:pointer;font-size:.88rem;transition:.15s;font-family:var(--sans)}
-  .opt:hover{border-color:var(--accent);color:var(--accent)}
-  .opt.sel{background:var(--navy);border-color:var(--navy);color:#fff}
-  .result{margin-top:20px;padding:20px;border-radius:10px;background:#fff;border:1px solid var(--line2);border-left:4px solid var(--gold);display:none}
-  .result.show{display:block;animation:fade .3s}
-  .result .big{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--navy);margin-bottom:4px}
-
-  /* STEPPER */
-  .steps{counter-reset:s;display:grid;gap:14px}
-  .step{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid var(--line);
-    border-radius:12px;padding:18px 20px;box-shadow:0 1px 2px rgba(20,33,61,.04)}
-  .step .num{counter-increment:s;flex:0 0 40px;height:40px;width:40px;border-radius:9px;display:grid;place-items:center;
-    background:var(--navy);color:#fff;font-family:var(--serif);font-weight:700}
-  .step .num::before{content:counter(s,decimal-leading-zero)}
-  .step h4{font-size:1.02rem;margin-bottom:3px}
-  .step p{font-size:.92rem;color:var(--muted)}
-
-  /* TABLE */
-  table{width:100%;border-collapse:collapse;font-size:.92rem;margin-top:8px}
-  th{text-align:left;font-family:var(--sans);color:var(--navy);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;
-    padding:12px 13px;border-bottom:2px solid var(--line2)}
-  td{padding:12px 13px;border-bottom:1px solid var(--line);color:var(--muted);vertical-align:top}
-  td b{color:var(--ink);font-weight:700}
-  tbody tr:hover{background:var(--paper2)}
-  .tbl-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--line);background:#fff}
-
-  /* LADDER / coder */
-  .coder{background:var(--paper2);border:1px solid var(--line2);border-radius:14px;padding:26px}
-  .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:22px 0 8px;position:relative}
-  @media(max-width:860px){.ladder{grid-template-columns:1fr;gap:10px}}
-  .rung{text-align:center;padding:15px 11px;border:1px solid var(--line);background:#fff;position:relative}
-  .rung:first-child{border-radius:10px 0 0 10px}.rung:last-child{border-radius:0 10px 10px 0}
-  @media(max-width:860px){.rung{border-radius:10px!important}}
-  .rung.on{background:var(--paper3);border-color:var(--navy)}
-  .rung .lbl{font-size:.7rem;text-transform:uppercase;letter-spacing:.07em;color:var(--dim);margin-bottom:6px;font-weight:600}
-  .rung .val{font-size:.9rem;color:var(--ink);font-weight:600;min-height:2.6em}
-  .quote{font-family:var(--serif);font-style:italic;font-size:1.08rem;color:var(--ink);border-left:3px solid var(--gold);
-    padding:6px 18px;margin-bottom:10px;background:transparent}
-
-  /* CHECKLIST scorer */
-  .checklist{display:grid;gap:10px}
-  .ck{display:flex;gap:12px;align-items:flex-start;padding:13px 15px;border:1px solid var(--line);border-radius:10px;
-    cursor:pointer;transition:.15s;background:#fff}
-  .ck:hover{border-color:var(--accent)}
-  .ck.on{background:#f0f6f2;border-color:var(--good)}
-  .ck .box{flex:0 0 20px;height:20px;width:20px;border-radius:5px;border:2px solid var(--dim);display:grid;place-items:center;margin-top:2px;background:#fff}
-  .ck.on .box{background:var(--good);border-color:var(--good)}
-  .ck.on .box::after{content:'✓';color:#fff;font-weight:900;font-size:.75rem}
-  .ck .t b{display:block;color:var(--ink);font-size:.94rem;font-weight:700}
-  .ck .t span{font-size:.86rem;color:var(--muted)}
-  .score{margin-top:22px;padding:22px;border-radius:12px;text-align:center;background:var(--paper2);border:1px solid var(--line2)}
-  .score .meter{height:12px;border-radius:8px;background:var(--paper3);overflow:hidden;margin:14px 0}
-  .score .fill{height:100%;width:0;border-radius:8px;background:linear-gradient(90deg,var(--navy),var(--good));transition:width .4s}
-  .score .verdict{font-family:var(--serif);font-weight:700;font-size:1.15rem}
-
-  .callout{border-left:3px solid var(--gold);background:var(--paper2);border-radius:0 10px 10px 0;padding:16px 20px;margin:18px 0;font-size:.96rem;color:var(--muted)}
-  .callout b{color:var(--ink)}
-
-  .scholars{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-  .chip{font-size:.82rem;padding:6px 12px;border-radius:6px;border:1px solid var(--line2);color:var(--muted);background:#fff}
-
-  footer{border-top:1px solid var(--line);padding:44px 0 56px;margin-top:20px;color:var(--dim);font-size:.9rem;background:var(--paper2)}
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:flex-start}
-  footer a{color:var(--accent)}
-  .copyright{width:100%;margin-top:18px;padding-top:16px;border-top:1px solid var(--line);color:var(--dim);font-size:.82rem}
-  .backhub{display:inline-flex;align-items:center;gap:7px;font-size:.85rem;color:var(--muted);margin-bottom:10px}
-  /* ==== Executive memorandum + collapsible sections ==== */
-  .memo-head{font-family:var(--serif);font-weight:700;font-size:1rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);border-bottom:1px solid var(--line2);padding-bottom:10px;margin-bottom:12px}
-  .memo-meta{display:grid;gap:5px;margin-bottom:16px}
-  .memo-meta>div{display:flex;gap:10px;font-size:.92rem;color:var(--muted)}
-  .memo-meta span{flex:0 0 auto;min-width:48px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:.7rem;color:var(--gold);padding-top:3px}
-  .expand-bar{max-width:var(--maxw);margin:0 auto;padding:22px 24px 0;display:flex;justify-content:flex-end}
-  .expand-bar button{font-family:var(--sans);font-size:.8rem;font-weight:600;color:var(--accent);background:#fff;border:1px solid var(--line2);border-radius:7px;padding:8px 14px;cursor:pointer}
-  .expand-bar button:hover{border-color:var(--accent)}
-  .expand-bar button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-  .sec-head.sect-toggle{cursor:pointer;position:relative;padding-right:40px}
-  .sec-head.sect-toggle::after{content:'';position:absolute;right:8px;top:10px;width:12px;height:12px;border-right:2.5px solid var(--navy);border-bottom:2.5px solid var(--navy);transform:rotate(45deg);transition:transform .2s}
-  section.collapsed .sec-head.sect-toggle::after{transform:rotate(-45deg)}
-  .sec-head.sect-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:4px}
-  section.collapsed .sect-body{display:none}
-  .sect-body{animation:fade .3s ease}
-  /* Centered footer */
-  footer .wrap{flex-direction:column;align-items:center;text-align:center;gap:6px;justify-content:center}
-  .foot-name{font-family:var(--serif);font-weight:700;color:var(--ink);font-size:1.08rem}
-  .foot-title{color:var(--muted);font-size:.92rem;max-width:640px}
-  .foot-links{margin-top:6px;font-size:.9rem}
-  .foot-links a{color:var(--accent);white-space:nowrap}
-  footer .copyright{width:100%;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);color:var(--dim);font-size:.82rem;text-align:center}
-</style>
+<link rel="canonical" href="https://freddricklogan.github.io/educational-leadership/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="src/exec-shell.css">
+<link rel="stylesheet" href="src/lr-kit.css">
+<link rel="stylesheet" href="src/page.css">
 </head>
 <body>
 
-<nav class="top"><div class="wrap">
+<nav class="top" aria-label="Sections"><div class="wrap">
   <div class="logo">
     <svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="#ffffff" stroke="#e3e7ec"/><circle cx="16" cy="16" r="10" fill="none" stroke="#94773d" stroke-width="2.2"/><polygon points="16,7 19,16 16,25 13,16" fill="#14213d"/><circle cx="16" cy="16" r="2" fill="#ffffff" stroke="#94773d" stroke-width="1.4"/></svg>
     Educational Leadership
@@ -235,8 +44,9 @@
   </div>
 </div></nav>
 
+<main>
 <header class="hero"><div class="wrap">
-  <a class="backhub" href="../resources/">← Educational Leadership &amp; Research Resources</a>
+  <a class="backhub" href="https://freddricklogan.github.io/resources/">← Educational Leadership &amp; Research Resources</a>
   <span class="eyebrow">A Complete Leadership Resource</span>
   <h1>Educational Leadership<br>&amp; School Improvement.</h1>
   <p class="lead">Leading learning organizations and improving schools with evidence, equity, and people at the center. A rigorous, interactive guide to how schools work as organizations, how leaders influence learning, and how disciplined improvement — grounded in data, law, politics, and justice — turns intentions into better outcomes for students. Built for aspiring principals, district leaders, and graduate students in K-12 educational leadership.</p>
@@ -266,7 +76,6 @@
   <li><b>Systemic equity</b> is a leadership practice: auditing access, treatment, and outcomes by group turns revealed disparities into owned improvement work.</li>
 </ul></div></div></section>
 
-
 <!-- ORIENTATION -->
 <section id="what"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Orientation</span><h2>Leadership as the work of improvement</h2>
@@ -280,16 +89,16 @@
         <li>Improve the instructional program — teaching and its conditions</li>
         <li>Secure accountability — to students, families, and the public</li>
       </ul>
-      <p class="kv" style="margin-top:10px">Leithwood's synthesis: these are the core practices of successful school leadership, and their effect on learning is second only to teaching itself.</p></div>
+      <p class="kv lr-s1">Leithwood's synthesis: these are the core practices of successful school leadership, and their effect on learning is second only to teaching itself.</p></div>
     <div class="card"><h3>Leadership vs. management — the honest contrast</h3>
-      <div class="tbl-wrap"><table>
-        <tr><th>Dimension</th><th>Leadership</th><th>Management</th></tr>
+      <div class="tbl-wrap"><table><tbody>
+        <tr><th scope="row">Dimension</th><th scope="row">Leadership</th><th scope="row">Management</th></tr>
         <tr><td><b>Focus</b></td><td>Direction &amp; change</td><td>Stability &amp; order</td></tr>
         <tr><td><b>Asks</b></td><td>What &amp; why?</td><td>How &amp; when?</td></tr>
         <tr><td><b>Works through</b></td><td>Vision &amp; influence</td><td>Systems &amp; control</td></tr>
         <tr><td><b>Time horizon</b></td><td>Long, aspirational</td><td>Near, operational</td></tr>
         <tr><td><b>Both matter</b></td><td colspan="2">Schools need each; the art is knowing which the moment demands.</td></tr>
-      </table></div></div>
+      </tbody></table></div></div>
   </div>
   <div class="callout"><b>Improvement is the throughline.</b> Every framework on this page — organizational, political, legal, and equity-focused — is in service of one question: how does a leader help a school get measurably, sustainably better for the students it currently serves least well?</div>
 </div></section>
@@ -299,16 +108,16 @@
   <div class="sec-head"><span class="eyebrow">Organizational theory &amp; behavior</span><h2>Four ways to see a school</h2>
     <p class="lead">Bolman &amp; Deal argue that leaders who can only see through one lens are chronically surprised. Reframing — deliberately looking through the structural, human-resource, political, and symbolic frames — turns confusion into choice. Select a frame to see its assumptions and leadership moves.</p></div>
   <div class="tabs" id="frametabs">
-    <button class="tab active" data-p="structural">Structural</button>
-    <button class="tab" data-p="humanres">Human Resource</button>
-    <button class="tab" data-p="political">Political</button>
-    <button class="tab" data-p="symbolic">Symbolic</button>
+    <button type="button" class="tab active" data-p="structural">Structural</button>
+    <button type="button" class="tab" data-p="humanres">Human Resource</button>
+    <button type="button" class="tab" data-p="political">Political</button>
+    <button type="button" class="tab" data-p="symbolic">Symbolic</button>
   </div>
 
   <div class="panel active" id="structural"><div class="panel-grid">
     <div class="card"><h3>Structural frame — the factory / bureaucracy</h3>
       <p>Sees the school as a <b>rational system</b> of roles, rules, goals, and coordination. Rooted in Weber's bureaucracy and Taylor's scientific management: the right structure, clearly aligned to goals, produces performance. Problems are structural mismatches — fix the org chart, policies, and workflows.</p>
-      <p class="kv" style="margin-top:12px"><b>Leader's move:</b> clarify roles, align structure to strategy, build efficient systems and clear accountability.</p>
+      <p class="kv lr-s2"><b>Leader's move:</b> clarify roles, align structure to strategy, build efficient systems and clear accountability.</p>
       <div class="scholars"><span class="chip">Weber</span><span class="chip">Taylor</span><span class="chip">Bolman &amp; Deal</span></div></div>
     <ul class="facts">
       <li><span>Metaphor</span><span>Factory / machine</span></li>
@@ -322,7 +131,7 @@
   <div class="panel" id="humanres"><div class="panel-grid">
     <div class="card"><h3>Human resource frame — the family</h3>
       <p>Sees the school as an <b>extended family</b> of needs, skills, and relationships. Drawing on Maslow, McGregor, and Argyris: organizations and people need each other, and the fit between them drives motivation and growth. Problems arise when the organization fails to meet human needs.</p>
-      <p class="kv" style="margin-top:12px"><b>Leader's move:</b> invest in people, empower and develop staff, build trust, align individual growth with the mission.</p>
+      <p class="kv lr-s2"><b>Leader's move:</b> invest in people, empower and develop staff, build trust, align individual growth with the mission.</p>
       <div class="scholars"><span class="chip">Maslow</span><span class="chip">McGregor</span><span class="chip">Argyris</span></div></div>
     <ul class="facts">
       <li><span>Metaphor</span><span>Family</span></li>
@@ -336,7 +145,7 @@
   <div class="panel" id="political"><div class="panel-grid">
     <div class="card"><h3>Political frame — the jungle</h3>
       <p>Sees the school as an <b>arena of contest</b> among coalitions with scarce resources and enduring differences in interest, belief, and power. Conflict is normal and even productive; decisions emerge from bargaining, negotiation, and coalition-building — not just rational analysis.</p>
-      <p class="kv" style="margin-top:12px"><b>Leader's move:</b> map stakeholders, build coalitions, negotiate, and use power ethically to advance the vision.</p>
+      <p class="kv lr-s2"><b>Leader's move:</b> map stakeholders, build coalitions, negotiate, and use power ethically to advance the vision.</p>
       <div class="scholars"><span class="chip">Bolman &amp; Deal</span><span class="chip">Pfeffer</span><span class="chip">Ball</span></div></div>
     <ul class="facts">
       <li><span>Metaphor</span><span>Jungle / arena</span></li>
@@ -350,7 +159,7 @@
   <div class="panel" id="symbolic"><div class="panel-grid">
     <div class="card"><h3>Symbolic frame — the theater / temple</h3>
       <p>Sees the school as a <b>culture</b> carried in symbols, stories, rituals, and shared meaning. What matters is not what happens but what it <em>means</em>. Culture — "the way we do things here" — binds a school together and gives work its significance. Problems are meaning breakdowns.</p>
-      <p class="kv" style="margin-top:12px"><b>Leader's move:</b> shape culture, tell the story, honor rituals and heroes, make meaning in moments of change and loss.</p>
+      <p class="kv lr-s2"><b>Leader's move:</b> shape culture, tell the story, honor rituals and heroes, make meaning in moments of change and loss.</p>
       <div class="scholars"><span class="chip">Schein</span><span class="chip">Deal &amp; Peterson</span><span class="chip">Bolman &amp; Deal</span></div></div>
     <ul class="facts">
       <li><span>Metaphor</span><span>Theater / temple / carnival</span></li>
@@ -361,13 +170,13 @@
     </ul>
   </div></div>
 
-  <div class="grid g2" style="margin-top:22px">
+  <div class="grid g2 lr-s3">
     <div class="card"><span class="tag">Loosely-coupled systems</span><h3>Weick — schools are not tight machines</h3>
       <p class="kv">Weick observed that schools are <b>loosely coupled</b>: classrooms, departments, and administration are connected but each preserves its own identity and logic. A directive from the office does not translate cleanly into changed practice behind every classroom door.</p>
-      <p class="kv" style="margin-top:8px"><b>So what:</b> loose coupling buffers innovation and local adaptation but frustrates top-down mandates. Improvement travels through culture, capacity, and trust — not memos.</p></div>
+      <p class="kv lr-s4"><b>So what:</b> loose coupling buffers innovation and local adaptation but frustrates top-down mandates. Improvement travels through culture, capacity, and trust — not memos.</p></div>
     <div class="card"><span class="tag">Open-systems view</span><h3>Schools inside their environment</h3>
       <p class="kv">An open system takes <b>inputs</b> (students, funding, policy, community expectations) from its environment, runs internal <b>processes</b> (teaching, leading, organizing), and returns <b>outputs</b> (learning, graduates) — continuously adapting through feedback.</p>
-      <p class="kv" style="margin-top:8px"><b>So what:</b> a school cannot be understood apart from its community, politics, and policy context. Boundary-spanning and environmental scanning are leadership work.</p></div>
+      <p class="kv lr-s4"><b>So what:</b> a school cannot be understood apart from its community, politics, and policy context. Boundary-spanning and environmental scanning are leadership work.</p></div>
   </div>
 </div></section>
 
@@ -378,22 +187,22 @@
   <div class="grid g3">
     <div class="card hoverable"><span class="tag">Transformational</span><h3>Inspire &amp; elevate</h3>
       <p class="kv">Raises followers' motivation and commitment through vision, idealized influence, inspirational motivation, intellectual stimulation, and individualized consideration (Bass &amp; Avolio; Leithwood in schools).</p>
-      <p class="kv" style="margin-top:8px"><b>Use when:</b> a school needs energizing change, a shared vision, and renewed collective purpose.</p></div>
+      <p class="kv lr-s4"><b>Use when:</b> a school needs energizing change, a shared vision, and renewed collective purpose.</p></div>
     <div class="card hoverable"><span class="tag">Instructional</span><h3>Lead the learning</h3>
       <p class="kv">Focuses the leader squarely on teaching and learning: defining the mission, managing the instructional program, and building a positive learning climate (Hallinger &amp; Murphy).</p>
-      <p class="kv" style="margin-top:8px"><b>Use when:</b> instructional quality is the priority and the leader must be the lead learner.</p></div>
+      <p class="kv lr-s4"><b>Use when:</b> instructional quality is the priority and the leader must be the lead learner.</p></div>
     <div class="card hoverable"><span class="tag">Distributed</span><h3>Leadership as practice</h3>
       <p class="kv">Locates leadership not in one person but in the interactions among leaders, followers, and the situation — stretched across many people and roles (Spillane; Gronn).</p>
-      <p class="kv" style="margin-top:8px"><b>Use when:</b> the work exceeds any one person; teacher leadership and capacity must be mobilized.</p></div>
+      <p class="kv lr-s4"><b>Use when:</b> the work exceeds any one person; teacher leadership and capacity must be mobilized.</p></div>
     <div class="card hoverable"><span class="tag">Adaptive</span><h3>Lead through hard change</h3>
       <p class="kv">Distinguishes technical problems (known fixes) from adaptive challenges (which require people to change values, habits, and beliefs). The leader regulates distress and gives the work back to the people (Heifetz).</p>
-      <p class="kv" style="margin-top:8px"><b>Use when:</b> the challenge has no expert answer and demands new learning from everyone.</p></div>
+      <p class="kv lr-s4"><b>Use when:</b> the challenge has no expert answer and demands new learning from everyone.</p></div>
     <div class="card hoverable"><span class="tag">Servant</span><h3>Serve first</h3>
       <p class="kv">Puts the growth, well-being, and needs of others first; the leader's role is stewardship and service to staff, students, and community (Greenleaf).</p>
-      <p class="kv" style="margin-top:8px"><b>Use when:</b> building trust, healing culture, and centering the people the school exists to serve.</p></div>
+      <p class="kv lr-s4"><b>Use when:</b> building trust, healing culture, and centering the people the school exists to serve.</p></div>
     <div class="card hoverable"><span class="tag">Situational</span><h3>Match style to readiness</h3>
       <p class="kv">Argues there is no one best style: leaders flex among directing, coaching, supporting, and delegating based on followers' competence and commitment for a given task (Hersey &amp; Blanchard).</p>
-      <p class="kv" style="margin-top:8px"><b>Use when:</b> team members vary in skill and confidence and need different things from you.</p></div>
+      <p class="kv lr-s4"><b>Use when:</b> team members vary in skill and confidence and need different things from you.</p></div>
   </div>
   <div class="callout"><b>These are complements, not rivals.</b> A principal might set a transformational vision, lead instruction directly, distribute leadership through teacher teams, and treat a stubborn equity gap as an adaptive challenge — all in the same year. Naming the model clarifies which lever you are pulling and why.</div>
 </div></section>
@@ -402,29 +211,29 @@
 <section id="improvement"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Leadership for school improvement</span><h2>Getting better at getting better</h2>
     <p class="lead">School improvement is not a plan you write once — it is a disciplined, continuous practice of testing changes, learning from evidence, and spreading what works. Modern improvement rests on three ideas: professional community, improvement science, and networks.</p></div>
-  <div class="grid g3" style="margin-bottom:22px">
+  <div class="grid g3 lr-s5">
     <div class="card"><span class="tag">Professional Learning Communities</span><h3>DuFour — collaborate around learning</h3>
       <p class="kv">A PLC organizes educators into collaborative teams that relentlessly pursue four questions: What should students learn? How will we know they've learned it? What do we do when they haven't? What do we do when they already have?</p>
-      <p class="kv" style="margin-top:8px">Big ideas: a focus on <b>learning</b> (not teaching), a <b>collaborative</b> culture, and orientation to <b>results</b>.</p></div>
+      <p class="kv lr-s4">Big ideas: a focus on <b>learning</b> (not teaching), a <b>collaborative</b> culture, and orientation to <b>results</b>.</p></div>
     <div class="card"><span class="tag">Improvement science</span><h3>Bryk et al. — learn to improve</h3>
       <p class="kv">Borrowed from healthcare and industry, improvement science treats problems as ones of practice to be solved through disciplined inquiry: understand the system that produces current outcomes, and test changes iteratively before scaling.</p>
-      <p class="kv" style="margin-top:8px">Anchored in the <b>PDSA cycle</b> and the discipline of "learning fast to implement well."</p></div>
+      <p class="kv lr-s4">Anchored in the <b>PDSA cycle</b> and the discipline of "learning fast to implement well."</p></div>
     <div class="card"><span class="tag">Networked improvement</span><h3>NICs — improve together</h3>
       <p class="kv">A Networked Improvement Community (Carnegie Foundation) joins many schools around a shared problem and a common aim, coordinated by a common measurement and driver framework, so learning accumulates across sites rather than being reinvented.</p>
-      <p class="kv" style="margin-top:8px">Motto: <b>"see the system, use disciplined inquiry, accelerate learning through networks."</b></p></div>
+      <p class="kv lr-s4">Motto: <b>"see the system, use disciplined inquiry, accelerate learning through networks."</b></p></div>
   </div>
 
-  <h3 style="margin-bottom:6px">Six improvement-science principles (Bryk, Gomez, Grunow &amp; LeMahieu)</h3>
-  <p class="lead" style="margin-bottom:16px">The stance that makes improvement rigorous rather than faddish.</p>
-  <div class="tbl-wrap" style="margin-bottom:8px"><table>
-    <tr><th>Principle</th><th>What it demands of a leader</th></tr>
+  <h3 class="lr-s6">Six improvement-science principles (Bryk, Gomez, Grunow &amp; LeMahieu)</h3>
+  <p class="lead lr-s7">The stance that makes improvement rigorous rather than faddish.</p>
+  <div class="tbl-wrap lr-s8"><table><tbody>
+    <tr><th scope="row">Principle</th><th scope="row">What it demands of a leader</th></tr>
     <tr><td><b>Make the work problem-specific &amp; user-centered</b></td><td>Start with a precise problem of practice, seen from the perspective of those it affects.</td></tr>
     <tr><td><b>Attend to variation in performance</b></td><td>Ask not just "what works?" but "what works, for whom, under what conditions?"</td></tr>
     <tr><td><b>See the system that produces outcomes</b></td><td>Current results are produced by the current system; map it before changing it.</td></tr>
     <tr><td><b>We cannot improve at scale what we cannot measure</b></td><td>Embed practical measures of process, outcome, and balance into daily work.</td></tr>
     <tr><td><b>Use disciplined inquiry (PDSA) to drive improvement</b></td><td>Test changes in small, fast cycles before adopting or scaling them.</td></tr>
     <tr><td><b>Accelerate learning through networked communities</b></td><td>Organize learning across people and sites so knowledge compounds.</td></tr>
-  </table></div>
+  </tbody></table></div>
 </div></section>
 
 <!-- PDSA STEPPER (SIGNATURE INTERACTIVE) -->
@@ -440,25 +249,25 @@
       <div class="rung" data-r="2"><div class="lbl">Study</div><div class="val" id="p2"></div></div>
       <div class="rung" data-r="3"><div class="lbl">Act</div><div class="val" id="p3"></div></div>
     </div>
-    <div style="display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:14px;flex-wrap:wrap">
-      <p class="kv" id="pdsaHint" style="max-width:60%">Watch a single change idea move through a full improvement cycle.</p>
-      <div style="display:flex;gap:8px">
-        <button class="btn" id="pdsaPrev">Back</button>
-        <button class="btn primary" id="pdsaNext">Next phase →</button>
+    <div class="lr-s9">
+      <p class="kv lr-s10" id="pdsaHint">Watch a single change idea move through a full improvement cycle.</p>
+      <div class="lr-s11">
+        <button type="button" class="btn" id="pdsaPrev">Back</button>
+        <button type="button" class="btn primary" id="pdsaNext">Next phase →</button>
       </div>
     </div>
   </div>
 
-  <div class="callout" style="margin-top:20px"><b>The discipline:</b> a PDSA test is small and fast on purpose — one grade team, a handful of students, two weeks — so you learn cheaply before you commit. A cycle rarely "succeeds" or "fails"; it produces <em>learning</em> that seeds the next, better test. Improvement is a staircase of cycles, not a single leap.</div>
+  <div class="callout lr-s12"><b>The discipline:</b> a PDSA test is small and fast on purpose — one grade team, a handful of students, two weeks — so you learn cheaply before you commit. A cycle rarely "succeeds" or "fails"; it produces <em>learning</em> that seeds the next, better test. Improvement is a staircase of cycles, not a single leap.</div>
 
-  <h3 style="margin:30px 0 12px">Driver diagram — the theory behind the tests</h3>
-  <p class="lead" style="margin-bottom:14px">A driver diagram links your aim to the primary drivers (the levers you believe matter), the secondary drivers (more specific conditions), and the concrete change ideas you will PDSA. It keeps a portfolio of tests coherent.</p>
-  <div class="tbl-wrap"><table>
-    <tr><th>Aim</th><th>Primary drivers</th><th>Secondary drivers</th><th>Change ideas to test</th></tr>
+  <h3 class="lr-s13">Driver diagram — the theory behind the tests</h3>
+  <p class="lead lr-s14">A driver diagram links your aim to the primary drivers (the levers you believe matter), the secondary drivers (more specific conditions), and the concrete change ideas you will PDSA. It keeps a portfolio of tests coherent.</p>
+  <div class="tbl-wrap"><table><tbody>
+    <tr><th scope="row">Aim</th><th scope="row">Primary drivers</th><th scope="row">Secondary drivers</th><th scope="row">Change ideas to test</th></tr>
     <tr><td rowspan="3"><b>Cut 9th-grade chronic absenteeism from 22% to 12% by June</b></td><td><b>Belonging &amp; relationships</b></td><td>Every student known by ≥1 adult</td><td>Advisory check-ins; first-week relationship mapping</td></tr>
     <tr><td><b>Early warning &amp; response</b></td><td>Attendance flagged &amp; acted on within 48h</td><td>Weekly attendance team; same-day family contact</td></tr>
     <tr><td><b>Family engagement</b></td><td>Families understand attendance matters early</td><td>Positive first-absence call script; home-language texts</td></tr>
-  </table></div>
+  </tbody></table></div>
 </div></section>
 
 <!-- DATA-INFORMED DECISIONS -->
@@ -466,7 +275,7 @@
   <div class="sec-head"><span class="eyebrow">Data-informed decision making</span><h2>From data to defensible action</h2>
     <p class="lead">Data does not improve schools — the disciplined use of data does. The goal is not more dashboards but better decisions: asking a real question, interrogating root causes, and closing the loop with action and re-measurement.</p></div>
 
-  <div class="grid g2" style="margin-bottom:22px">
+  <div class="grid g2 lr-s5">
     <div class="card"><h3>The data-inquiry cycle</h3>
       <ul>
         <li><b>Frame a question</b> tied to a real problem of practice</li>
@@ -475,7 +284,7 @@
         <li><b>Decide &amp; act</b> — a specific, owned, time-bound change</li>
         <li><b>Re-measure</b> to learn whether it worked, then iterate</li>
       </ul>
-      <p class="kv" style="margin-top:10px">Four types of data (Bernhardt): demographic, perceptual, school-process, and student-learning — intersecting them is where insight lives.</p></div>
+      <p class="kv lr-s1">Four types of data (Bernhardt): demographic, perceptual, school-process, and student-learning — intersecting them is where insight lives.</p></div>
     <div class="card"><h3>Root-cause analysis — dig past the symptom</h3>
       <p class="kv">A gap in outcomes is a symptom. Root-cause tools push past it to causes a school can actually change:</p>
       <ul>
@@ -487,19 +296,19 @@
   </div>
 
   <div class="card"><h3>Avoiding the misuse of data</h3>
-    <div class="grid g2" style="margin-top:6px">
+    <div class="grid g2 lr-s15">
       <ul><li>Don't mistake correlation for cause</li><li>Don't judge people on data outside their control</li><li>Don't chase a single number ("Goodhart's law")</li><li>Don't hide disparities inside averages — disaggregate</li></ul>
       <ul><li>Don't use data to blame rather than to learn</li><li>Don't confuse measurable with important</li><li>Don't over-interpret small samples or noise</li><li>Do pair every accountability measure with an improvement measure</li></ul>
     </div></div>
   <div class="callout"><b>Balancing measures matter.</b> A change that improves one number can quietly harm another — raising test scores while narrowing the curriculum, or cutting suspensions while classrooms grow unsafe. Track outcome, process, <em>and</em> balancing measures together.</div>
 </div></section>
 
-<!-- POLITICS & SOCIAL CONTEXT -->
+<!-- POLITICS &amp; SOCIAL CONTEXT -->
 <section id="politics"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">The social context &amp; politics of education</span><h2>Schools are governed — and contested</h2>
     <p class="lead">American K-12 education is a shared, contested enterprise. Authority is distributed across federal, state, and local levels, and every school is an arena of competing interests. Leaders who ignore politics are governed by it.</p></div>
 
-  <div class="grid g3" style="margin-bottom:22px">
+  <div class="grid g3 lr-s5">
     <div class="card"><span class="tag">Federal</span><h3>Influence without direct control</h3>
       <p class="kv">Education is not named in the U.S. Constitution, so it is reserved to the states (10th Amendment). The federal role works through funding conditions and civil-rights enforcement — ESEA/ESSA, IDEA, Title I &amp; Title IX, and the Department of Education's civil-rights authority.</p></div>
     <div class="card"><span class="tag">State</span><h3>The constitutional owner</h3>
@@ -511,7 +320,7 @@
   <div class="grid g2">
     <div class="card"><h3>Micropolitics of the school (Ball)</h3>
       <p class="kv">Stephen Ball showed that the school itself is a political organization: beneath the formal structure runs a world of <b>coalitions, influence, control, and conflict</b>. Departments compete for resources and status; heads exercise styles of control; teachers resist and negotiate.</p>
-      <p class="kv" style="margin-top:8px"><b>So what:</b> a leader must read the informal map — who has influence, where interests collide — and lead through it honestly rather than pretend it isn't there.</p></div>
+      <p class="kv lr-s4"><b>So what:</b> a leader must read the informal map — who has influence, where interests collide — and lead through it honestly rather than pretend it isn't there.</p></div>
     <div class="card"><h3>Stakeholder politics</h3>
       <p class="kv">Every significant decision touches many interests: students, teachers and their unions, families, the board, taxpayers, community organizations, and state agencies — each with legitimate but sometimes conflicting claims.</p>
       <ul>
@@ -527,8 +336,8 @@
 <section id="law"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Education law (K-12)</span><h2>The legal frame every leader must know</h2>
     <p class="lead">School leaders make legal decisions daily — about students' rights, discipline, special education, privacy, and staff. This is an orientation to the major domains, not legal advice; consult counsel for specific cases.</p></div>
-  <div class="tbl-wrap"><table>
-    <tr><th>Domain</th><th>Core principle</th><th>Key authority / case</th></tr>
+  <div class="tbl-wrap"><table><tbody>
+    <tr><th scope="row">Domain</th><th scope="row">Core principle</th><th scope="row">Key authority / case</th></tr>
     <tr><td><b>Constitutional foundation</b></td><td>Education is a state responsibility (10th Amendment); students do not "shed rights at the schoolhouse gate."</td><td><i>Tinker v. Des Moines</i> (1969)</td></tr>
     <tr><td><b>Student speech (1st Amendment)</b></td><td>Student expression is protected unless it materially disrupts school; schools may regulate lewd, school-sponsored, or drug-promoting speech.</td><td><i>Tinker</i>; <i>Bethel v. Fraser</i>; <i>Hazelwood</i>; <i>Morse v. Frederick</i>; <i>Mahanoy</i> (off-campus)</td></tr>
     <tr><td><b>Search &amp; seizure (4th Amendment)</b></td><td>School searches require only "reasonable suspicion," not probable cause — a lower bar than for police.</td><td><i>New Jersey v. T.L.O.</i> (1985)</td></tr>
@@ -539,7 +348,7 @@
     <tr><td><b>Church &amp; state (Establishment)</b></td><td>Public schools may neither establish nor inhibit religion; students retain private religious expression rights.</td><td><i>Engel v. Vitale</i>; <i>Lemon v. Kurtzman</i>; <i>Kennedy v. Bremerton</i> (2022)</td></tr>
     <tr><td><b>Due process (14th Amendment)</b></td><td>Students facing suspension are owed notice and a hearing; longer exclusions and staff dismissals require greater process.</td><td><i>Goss v. Lopez</i> (1975)</td></tr>
     <tr><td><b>Teacher employment</b></td><td>Tenure, contracts, and collective bargaining shape hiring, evaluation, and dismissal; due process governs adverse action.</td><td>State tenure statutes; district CBAs; <i>Pickering v. Board of Ed.</i> (speech)</td></tr>
-  </table></div>
+  </tbody></table></div>
   <div class="callout"><b>The leader's legal disposition:</b> know the domains, document decisions, apply policy consistently, protect students' rights and privacy, and involve counsel early. Consistency and documentation prevent most legal exposure.</div>
 </div></section>
 
@@ -548,7 +357,7 @@
   <div class="sec-head"><span class="eyebrow">Systemic (in)equity in American education</span><h2>The gaps are produced, not given</h2>
     <p class="lead">Disparities in American education are not accidents of individual effort — they are produced by structures: how schools are funded, how students are sorted, and whose culture the school treats as normal. Naming the structure is the first step to changing it.</p></div>
 
-  <div class="grid g2" style="margin-bottom:22px">
+  <div class="grid g2 lr-s5">
     <div class="card"><h3>How inequity is structured</h3>
       <ul>
         <li><b>School finance inequity</b> — heavy reliance on local property taxes ties school resources to neighborhood wealth</li>
@@ -559,7 +368,7 @@
       </ul></div>
     <div class="card"><h3>From "achievement gap" to "opportunity gap"</h3>
       <p class="kv">Naming matters. "Achievement gap" locates the problem in students; "opportunity gap" (Ladson-Billings' "education debt") locates it in the system that distributes learning conditions unequally.</p>
-      <p class="kv" style="margin-top:10px"><b>Culturally Responsive School Leadership (Khalifa)</b> names four leadership behaviors:</p>
+      <p class="kv lr-s1"><b>Culturally Responsive School Leadership (Khalifa)</b> names four leadership behaviors:</p>
       <ul>
         <li>Be <b>critically self-reflective</b> about bias and privilege</li>
         <li>Develop and sustain <b>culturally responsive teachers</b> and curricula</li>
@@ -591,9 +400,9 @@
   <div class="score">
     <div class="kv">Equity-audit coverage</div>
     <div class="meter"><div class="fill" id="auditFill"></div></div>
-    <div class="verdict" id="auditVerdict" style="color:var(--muted)">Select the practices your school consistently does</div>
+    <div class="verdict lr-s16" id="auditVerdict">Select the practices your school consistently does</div>
   </div>
-  <div class="callout" style="margin-top:18px"><b>A score is a starting line, not a grade.</b> The point of an audit is not the number but the conversations and commitments that follow — turning revealed disparities into concrete, owned, time-bound improvement work (which is where a PDSA cycle begins).</div>
+  <div class="callout lr-s17"><b>A score is a starting line, not a grade.</b> The point of an audit is not the number but the conversations and commitments that follow — turning revealed disparities into concrete, owned, time-bound improvement work (which is where a PDSA cycle begins).</div>
 </div></section>
 
 <!-- ORGANIZATIONAL LEARNING -->
@@ -601,7 +410,7 @@
   <div class="sec-head"><span class="eyebrow">Organizational learning &amp; performance</span><h2>Building a school that keeps learning</h2>
     <p class="lead">The most improvable schools are learning organizations — able to build their own capacity, adapt, and get better over time. This is the leader's ultimate work: not solving every problem, but building an organization that can solve its own.</p></div>
 
-  <div class="grid g4" style="margin-bottom:22px">
+  <div class="grid g4 lr-s5">
     <div class="card hoverable"><span class="tag">Discipline 1</span><h3>Personal mastery</h3>
       <p class="kv">Individuals continually clarify and deepen their own vision and competence — a school of adults who are themselves committed learners.</p></div>
     <div class="card hoverable"><span class="tag">Discipline 2</span><h3>Mental models</h3>
@@ -614,7 +423,7 @@
   <div class="grid g2">
     <div class="card"><span class="tag">Discipline 5 · the cornerstone</span><h3>Systems thinking (Senge)</h3>
       <p class="kv">The fifth discipline that integrates the others: seeing wholes and interrelationships rather than isolated parts and events. Today's problems come from yesterday's "solutions"; leverage is rarely where it seems.</p>
-      <p class="kv" style="margin-top:8px"><b>So what:</b> a leader looks for the structural patterns generating recurring problems, and intervenes at points of high leverage rather than fighting symptoms.</p></div>
+      <p class="kv lr-s4"><b>So what:</b> a leader looks for the structural patterns generating recurring problems, and intervenes at points of high leverage rather than fighting symptoms.</p></div>
     <div class="card"><h3>Capacity building &amp; adult learning</h3>
       <p class="kv">Sustainable improvement grows the organization's <b>capacity</b> — the collective knowledge, skills, and dispositions to keep improving (Fullan).</p>
       <ul>
@@ -627,36 +436,36 @@
   <div class="callout"><b>Change is a process, not an event (Fullan).</b> Real change moves through implementation dips, requires pressure <em>and</em> support, and depends on the moral purpose of improving learning and life chances for every student. The leader's job is to keep the system learning its way toward that purpose.</div>
 </div></section>
 
-<!-- GLOSSARY & REFERENCES -->
+<!-- GLOSSARY &amp; REFERENCES -->
 <section id="glossary"><div class="wrap">
   <div class="sec-head"><span class="eyebrow">Reference</span><h2>Core vocabulary &amp; foundational works</h2></div>
   <div class="grid g2">
-    <div class="card"><ul style="list-style:none;padding:0;margin:0">
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Reframing</b> — deliberately viewing an organization through multiple frames (structural, HR, political, symbolic).</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Loose coupling</b> — connected-but-independent units whose links are weak and buffered (Weick).</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Distributed leadership</b> — leadership stretched across people, roles, and situation (Spillane).</li>
-      <li style="padding:9px 0"><b style="color:var(--ink)">Adaptive challenge</b> — a problem requiring people to change values and habits, with no technical fix (Heifetz).</li>
+    <div class="card"><ul class="lr-s18">
+      <li class="lr-s19"><b class="lr-s20">Reframing</b> — deliberately viewing an organization through multiple frames (structural, HR, political, symbolic).</li>
+      <li class="lr-s19"><b class="lr-s20">Loose coupling</b> — connected-but-independent units whose links are weak and buffered (Weick).</li>
+      <li class="lr-s19"><b class="lr-s20">Distributed leadership</b> — leadership stretched across people, roles, and situation (Spillane).</li>
+      <li class="lr-s21"><b class="lr-s20">Adaptive challenge</b> — a problem requiring people to change values and habits, with no technical fix (Heifetz).</li>
     </ul></div>
-    <div class="card"><ul style="list-style:none;padding:0;margin:0">
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">PDSA cycle</b> — Plan-Do-Study-Act; the disciplined unit of iterative improvement.</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Driver diagram</b> — a theory of improvement linking aim → drivers → change ideas.</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">NIC</b> — Networked Improvement Community; sites learning together on a shared aim (Carnegie).</li>
-      <li style="padding:9px 0"><b style="color:var(--ink)">Balancing measure</b> — a metric that catches unintended harm from an improvement.</li>
+    <div class="card"><ul class="lr-s18">
+      <li class="lr-s19"><b class="lr-s20">PDSA cycle</b> — Plan-Do-Study-Act; the disciplined unit of iterative improvement.</li>
+      <li class="lr-s19"><b class="lr-s20">Driver diagram</b> — a theory of improvement linking aim → drivers → change ideas.</li>
+      <li class="lr-s19"><b class="lr-s20">NIC</b> — Networked Improvement Community; sites learning together on a shared aim (Carnegie).</li>
+      <li class="lr-s21"><b class="lr-s20">Balancing measure</b> — a metric that catches unintended harm from an improvement.</li>
     </ul></div>
-    <div class="card"><ul style="list-style:none;padding:0;margin:0">
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">PLC</b> — Professional Learning Community; collaborative teams focused on learning &amp; results (DuFour).</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">FAPE / LRE</b> — free appropriate public education in the least restrictive environment (IDEA).</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Opportunity gap</b> — unequal access to learning conditions that precedes the achievement gap.</li>
-      <li style="padding:9px 0"><b style="color:var(--ink)">Equity audit</b> — systematic examination of access, treatment, and outcomes by group.</li>
+    <div class="card"><ul class="lr-s18">
+      <li class="lr-s19"><b class="lr-s20">PLC</b> — Professional Learning Community; collaborative teams focused on learning &amp; results (DuFour).</li>
+      <li class="lr-s19"><b class="lr-s20">FAPE / LRE</b> — free appropriate public education in the least restrictive environment (IDEA).</li>
+      <li class="lr-s19"><b class="lr-s20">Opportunity gap</b> — unequal access to learning conditions that precedes the achievement gap.</li>
+      <li class="lr-s21"><b class="lr-s20">Equity audit</b> — systematic examination of access, treatment, and outcomes by group.</li>
     </ul></div>
-    <div class="card"><ul style="list-style:none;padding:0;margin:0">
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Culturally responsive school leadership</b> — leadership that affirms and includes all students' cultures (Khalifa).</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Systems thinking</b> — seeing wholes, interrelationships, and leverage points (Senge).</li>
-      <li style="padding:9px 0;border-bottom:1px solid var(--line)"><b style="color:var(--ink)">Micropolitics</b> — the informal politics of interest, influence, and conflict within a school (Ball).</li>
-      <li style="padding:9px 0"><b style="color:var(--ink)">Capacity building</b> — growing the collective ability to keep improving (Fullan).</li>
+    <div class="card"><ul class="lr-s18">
+      <li class="lr-s19"><b class="lr-s20">Culturally responsive school leadership</b> — leadership that affirms and includes all students' cultures (Khalifa).</li>
+      <li class="lr-s19"><b class="lr-s20">Systems thinking</b> — seeing wholes, interrelationships, and leverage points (Senge).</li>
+      <li class="lr-s19"><b class="lr-s20">Micropolitics</b> — the informal politics of interest, influence, and conflict within a school (Ball).</li>
+      <li class="lr-s21"><b class="lr-s20">Capacity building</b> — growing the collective ability to keep improving (Fullan).</li>
     </ul></div>
   </div>
-  <div class="card" style="margin-top:18px"><h3>Foundational scholars &amp; further reading</h3>
+  <div class="card lr-s17"><h3>Foundational scholars &amp; further reading</h3>
     <div class="scholars">
       <span class="chip">Bolman &amp; Deal — <em>Reframing Organizations</em></span>
       <span class="chip">Bryk, Gomez, Grunow &amp; LeMahieu — <em>Learning to Improve</em></span>
@@ -674,112 +483,20 @@
       <span class="chip">Hallinger &amp; Murphy — <em>Instructional Leadership</em></span>
     </div></div>
 </div></section>
+</main>
 
 <footer><div class="wrap">
   <div class="foot-name">Freddrick Logan</div>
   <div class="foot-title">Educational Leadership &amp; School Improvement</div>
   <nav class="foot-links" aria-label="Footer">
     <a href="https://fredlogan.phd">fredlogan.phd</a> &middot;
-    <a href="../resources/">Resource hub</a> &middot;
+    <a href="https://freddricklogan.github.io/resources/">Resource hub</a> &middot;
     <a href="https://github.com/Freddricklogan">GitHub</a> &middot;
     <a href="https://www.linkedin.com/in/freddricklogan/">LinkedIn</a>
   </nav>
   <div class="copyright">&copy; 2026 Freddrick Logan &mdash; Technologist &amp; Education. All rights reserved.</div>
 </div></footer>
 
-<script>
-// ---- Tabs: four organizational frames ----
-document.querySelectorAll('#frametabs .tab').forEach(t=>{
-  t.onclick=()=>{
-    document.querySelectorAll('#frametabs .tab').forEach(x=>x.classList.remove('active'));
-    document.querySelectorAll('#org .panel').forEach(p=>p.classList.remove('active'));
-    t.classList.add('active');
-    document.getElementById(t.dataset.p).classList.add('active');
-  };
-});
-
-// ---- PDSA improvement-cycle stepper ----
-const PDSA={
-  aim:'AIM: Reduce 9th-grade chronic absenteeism (missing 10%+ of days) from 22% to 12% by June — starting with one small, fast test.',
-  steps:[
-    'PLAN: Hypothesize that a positive same-day call home on a student\'s FIRST absence will improve attendance. Test with one advisory (18 students) for two weeks. Predict fewer repeat absences. Measure: repeat-absence rate + a brief family sentiment check.',
-    'DO: Advisors make same-day, warm "we missed you" calls on any first absence. Log each call, note what happened, and capture surprises — a wrong number, a night-shift parent, a student who was actually suspended.',
-    'STUDY: Compare prediction to data. Repeat absences fell in the test advisory vs. a comparison group; families reacted well to a positive (not punitive) call — but advisors couldn\'t reach 30% of numbers, and calls took longer than planned.',
-    'ACT: ADOPT the positive first-absence call; ADAPT by adding home-language texts and updating contact info first; then run the next PDSA to fix the unreachable-family problem. The cycle seeds the next, better test.'
-  ],
-  hints:[
-    'PLAN — state a change idea, a prediction, and how you\'ll measure it. Keep the test small and fast so learning is cheap.',
-    'DO — run the test on a small scale and document what actually happened, including the surprises.',
-    'STUDY — compare results to your prediction. The unexpected findings are often the most valuable learning.',
-    'ACT — decide: Adopt, Adapt, or Abandon. Then start the next cycle. Improvement is a staircase of PDSA cycles.'
-  ]
-};
-let pd=0;
-function renderPDSA(){
-  document.getElementById('pdsaAim').textContent=PDSA.aim;
-  for(let i=0;i<4;i++){
-    document.getElementById('p'+i).textContent = i<=pd ? PDSA.steps[i] : '';
-    document.querySelectorAll('#pdsa .rung')[i].classList.toggle('on', i<=pd);
-  }
-  document.getElementById('pdsaHint').textContent=PDSA.hints[pd];
-  document.getElementById('pdsaPrev').disabled = pd===0;
-  document.getElementById('pdsaNext').textContent = pd===3 ? 'Restart cycle' : 'Next phase →';
-}
-document.getElementById('pdsaNext').onclick=()=>{ pd = pd===3 ? 0 : pd+1; renderPDSA(); };
-document.getElementById('pdsaPrev').onclick=()=>{ if(pd>0){pd--;renderPDSA();} };
-renderPDSA();
-
-// ---- Equity-audit scorer ----
-const acks=document.querySelectorAll('#auditlist .ck');
-function scoreAudit(){
-  let s=0; acks.forEach(c=>{ if(c.classList.contains('on')) s+=parseInt(c.dataset.w,10); });
-  s=Math.min(100,s);
-  document.getElementById('auditFill').style.width=s+'%';
-  const v=document.getElementById('auditVerdict');
-  if(s===0){v.textContent='Select the practices your school consistently does';v.style.color='var(--muted)';}
-  else if(s<35){v.textContent=s+'% — Emerging: start by disaggregating data & discipline';v.style.color='var(--bad)';}
-  else if(s<70){v.textContent=s+'% — Developing: extend to access, resources & representation';v.style.color='var(--warn)';}
-  else{v.textContent=s+'% — Advanced: comprehensive, data-grounded equity practice';v.style.color='var(--good)';}
-}
-acks.forEach(c=>c.onclick=()=>{c.classList.toggle('on');scoreAudit();});
-scoreAudit();
-</script>
-<script>
-(function(){
-  if(document.querySelector('.sec-head.sect-toggle')) return;
-  var firstCollapsible=null;
-  [].slice.call(document.querySelectorAll('section')).forEach(function(sec){
-    var wrap=sec.querySelector('.wrap'); if(!wrap) return;
-    var head=wrap.querySelector('.sec-head'); if(!head) return;
-    if(wrap.querySelector('.memo-head')||wrap.querySelector('.exec-summary')) return;
-    var body=document.createElement('div'); body.className='sect-body';
-    var n=head.nextSibling;
-    while(n){ var nx=n.nextSibling; body.appendChild(n); n=nx; }
-    wrap.appendChild(body);
-    head.classList.add('sect-toggle');
-    head.setAttribute('role','button'); head.setAttribute('tabindex','0'); head.setAttribute('aria-expanded','false');
-    sec.classList.add('collapsed');
-    if(!firstCollapsible) firstCollapsible=sec;
-    function set(open){ sec.classList[open?'remove':'add']('collapsed'); head.setAttribute('aria-expanded',open?'true':'false'); }
-    head.addEventListener('click',function(){ set(sec.classList.contains('collapsed')); });
-    head.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); set(sec.classList.contains('collapsed')); } });
-  });
-  function openHash(){ var id=decodeURIComponent((location.hash||'').slice(1)); if(!id) return; var el=document.getElementById(id); if(!el) return; var s=el.closest?el.closest('section'):null; if(s&&s.classList.contains('collapsed')){ s.classList.remove('collapsed'); var h=s.querySelector('.sec-head.sect-toggle'); if(h)h.setAttribute('aria-expanded','true'); } setTimeout(function(){ try{el.scrollIntoView({behavior:'smooth',block:'start'});}catch(e){el.scrollIntoView();} },40); }
-  window.addEventListener('hashchange',openHash);
-  if(firstCollapsible){
-    var bar=document.createElement('div'); bar.className='expand-bar';
-    var btn=document.createElement('button'); btn.type='button'; btn.textContent='Expand all sections'; btn.setAttribute('aria-expanded','false');
-    var expanded=false;
-    btn.addEventListener('click',function(){
-      expanded=!expanded;
-      document.querySelectorAll('section').forEach(function(s){ var h=s.querySelector('.sec-head.sect-toggle'); if(!h) return; s.classList[expanded?'remove':'add']('collapsed'); h.setAttribute('aria-expanded',expanded?'true':'false'); });
-      btn.textContent=expanded?'Collapse all sections':'Expand all sections'; btn.setAttribute('aria-expanded',expanded?'true':'false');
-    });
-    bar.appendChild(btn);
-    firstCollapsible.parentNode.insertBefore(bar, firstCollapsible);
-  }
-  openHash();
-})();
-</script>
+<script type="module" src="src/main.js"></script>
 </body>
 </html>
