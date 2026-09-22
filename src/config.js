@@ -3,6 +3,7 @@ export const config = {
   title: 'Educational Leadership & School Improvement',
   tagline: 'A graduate-level guide to K-12 educational leadership: organizational frames, six leadership models, improvement science and PDSA cycles, data-informed decisions, the politics and law of education, systemic equity and the learning organization, with a frame explorer, a PDSA stepper and an equity audit.',
   repo: 'https://github.com/Freddricklogan/educational-leadership',
+  theme: 'plum',
   pagesUrl: 'https://freddricklogan.github.io/educational-leadership/',
   quizTitle: 'Five questions on educational leadership',
   quiz: [
